@@ -1,0 +1,23 @@
+<div class="padre-container">
+    <h2>Componente PADRE 🐓</h2>
+    <p>Valor del contador:
+        <strong>{{ contador() }}</strong>
+    </p>
+
+    <app-hijo [valor]="contador()"
+        (incrementar)="alIncrementar()"
+        (decrementar)="alDecrementar()">
+    </app-hijo>
+
+    <div class="historial">
+        <h4>Historial de eventos recibidos DEL HIJO: </h4>
+        <ul>
+            @for (entrada of historial(); track $index){
+                <li>{{entrada}}</li>
+            }
+            @empty{
+                <li class="vacio">No hay eventos en el historial.</li>
+            }
+        </ul>
+    </div>
+</div>

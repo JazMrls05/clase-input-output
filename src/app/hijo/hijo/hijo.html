@@ -1,0 +1,12 @@
+<div class="hijo-container">
+    <h3>Componente HIJO 🐣</h3>
+    <p>Valor recibido del PADRE: <strong>{{ valor() }}</strong></p>
+    <div class="botones">
+        <button (click)="sumar()">Incrementar</button>
+        <button (click)="restar()">Decrementar</button>
+    </div>
+
+    <small>Nota: El valor del contador se encuentra en el componente PADRE, 
+        el HIJO solo lo recibe y emite eventos para modificarlo.</small>
+
+</div>
