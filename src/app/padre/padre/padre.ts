@@ -9,7 +9,7 @@ import { Hijo } from '../../hijo/hijo/hijo';
 })
 export class Padre {
   contador = signal(0);
-  historial = signal<string[]>([]);
+  historial = signal<string[]>([]); // Historial de eventos realizados, array de strings.
 
   alIncrementar(){
     this.contador.update((valor) => valor + 1);
