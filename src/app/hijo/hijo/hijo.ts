@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -11,13 +11,20 @@ export class Hijo {
   incrementar = output<void>(); // evento que se dispara cuando el usuario hace click en el botón de incrementar.
   decrementar = output<void>(); // evento que se dispara cuando el usuario hace click en el botón de decrementar.
 
-
-  // Emitimos los eventos al padre para que este se encargue de actualizar el contador y el historial.
+  contadorModel = model(0);   //Emitimos los eventos al padre para que este se encargue de actualizar el contador y el historial.
   sumar (){
     this.incrementar.emit(); 
   }
 
   restar (){
     this.decrementar.emit();
+  }
+
+  sumarModel() {
+    this.contadorModel.update(valor => valor + 1);
+  }
+
+  restarModel() {
+    this.contadorModel.update(valor => valor - 1);
   }
 }

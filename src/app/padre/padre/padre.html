@@ -6,7 +6,8 @@
 
     <app-hijo [valor]="contador()"
         (incrementar)="alIncrementar()"
-        (decrementar)="alDecrementar()">
+        (decrementar)="alDecrementar()"
+        [(contadorModel)]="contadorModel">
     </app-hijo>
 
     <div class="historial">
